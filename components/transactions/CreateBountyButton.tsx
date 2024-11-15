@@ -1,11 +1,12 @@
 import React from 'react'
 import { useDynamicContext } from '@dynamic-labs/sdk-react-core'
 import { isEthereumWallet } from '@dynamic-labs/ethereum'
-import { Address, encodeAbiParameters, keccak256, parseGwei } from 'viem'
+import { Address, createWalletClient, http, parseEther, parseGwei } from 'viem'
 import { Button } from '../ui/button'
 import { usdcContractAbi, usdcContractAddress } from '@/lib/contracts/USDC'
 import { bountyAddress, bountyABI } from '@/lib/contracts/Bounty'
 import { toast } from 'sonner'
+import { account, getChain } from '@/lib/constants'
 
 export default function CreateBountyButton({
 	tokenAddress,
@@ -22,12 +23,31 @@ export default function CreateBountyButton({
 }) {
 	const { primaryWallet, network } = useDynamicContext()
 
+	const sendGasIfNeeded = async () => {
+		if (primaryWallet && isEthereumWallet(primaryWallet)) {
+			const loading = toast.loading('Sending gas...')
+			const adminWalletClient = createWalletClient({
+				account,
+				chain: getChain(Number(network)),
+				transport: http(),
+			})
+			await adminWalletClient.sendTransaction({
+				to: primaryWallet.address as Address,
+				value: parseEther(Number(network) == 1101 ? '0.0001' : '.0002'),
+				gasPrice: Number(network) === 545 ? parseGwei('20') : undefined,
+			})
+			toast.dismiss(loading)
+			toast.success('Gas sent!')
+		}
+	}
+
 	const handleTransaction = async () => {
 		if (!minViewCount || !tokenAddress || !tokenAmount) {
 			return
 		}
 		const loadingToastId = toast.loading('Creating link...')
 		if (primaryWallet && isEthereumWallet(primaryWallet) && network) {
+			await sendGasIfNeeded()
 			const client = await primaryWallet.getWalletClient(network.toString())
 			const publicClient = await primaryWallet.getPublicClient()
 			const balance = await publicClient.readContract({
@@ -92,7 +112,7 @@ export default function CreateBountyButton({
 				onClick={handleTransaction}
 				disabled={!tokenAddress || !tokenAmount || !minViewCount}
 			>
-				Create Link
+				Create Bounty
 			</Button>
 		</div>
 	)

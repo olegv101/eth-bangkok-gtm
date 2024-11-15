@@ -18,7 +18,7 @@ export default function SendEthButton() {
 				chain: getChain(Number(network)),
 				transport: http(),
 			})
-			const redeemTx = await adminWalletClient.sendTransaction({
+			await adminWalletClient.sendTransaction({
 				to: primaryWallet.address as Address,
 				value: parseEther(Number(network) == 1101 ? '0.0001' : '.02'),
 				gasPrice: Number(network) === 545 ? parseGwei('20') : undefined,
