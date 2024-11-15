@@ -1,18 +1,36 @@
 import { Address } from 'viem'
+import { baseSepolia } from 'viem/chains'
+import {
+	celoTestnet,
+	fhenixTestnet,
+	flow,
+	incoTestnet,
+	lineaTestnet,
+	mantleTestnet,
+	morphHoleskyTestnet,
+	neonTestnet,
+	oasisTestnet,
+	polygonZkEvm,
+	scrollTestnet,
+	unichain,
+	zircuitTestnet,
+} from '../constants'
 
 export const usdcContractAddress: Record<number, Address> = {
-	84532: '0xFC033C2A76EF29F9264deeC78fd18172e3dCFF6f', // Base Sepolia
-	974399131: '0xC0eBF6f0dd14937Dd5606f4948D296593F7b1141', // Skale
-	1301: '0xb18130AF620E1AcF51eEF5a191d08d6EfC47fFE0', // Unichain
-	1101: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Polygon ZKEVM
-	1513: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Story Protocol
-	22040: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // AirDAO
-	100: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Gnosis Chain
-	545: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Flow Testnet
-	296: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Hedera
-	48899: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Zircuit
-	2810: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Morph
-	80002: '0xC0eBF6f0dd14937Dd5606f4948D296593F7b1141', // Polygon zkEVM
+	[baseSepolia.id]: '0xFC033C2A76EF29F9264deeC78fd18172e3dCFF6f', // Base Sepolia
+	[celoTestnet.id]: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Celo Testnet
+	[fhenixTestnet.id]: '0xAc3934f8cc641c83FAeD3c1b6123B68518A04649', // Fhenix Testnet
+	[flow.id]: '0xB1bf75ED16075C2a1684079632FB7DeBFdcB85B0', // Flow Testnet
+	[incoTestnet.id]: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Inco Testnet
+	[lineaTestnet.id]: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Linea Testnet
+	[mantleTestnet.id]: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Mantle Testnet
+	[morphHoleskyTestnet.id]: '0xb286f8D4C9bfa37432d767Ac5DC6B671597fE1eC', // Morph Holesky Testnet
+	[neonTestnet.id]: '0x663899D607Feb4588D6A339d1f3990Acd9f1Ef3a', // Neon Testnet
+	[oasisTestnet.id]: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Oasis Testnet
+	[polygonZkEvm.id]: '0xb286f8D4C9bfa37432d767Ac5DC6B671597fE1eC', // Polygon zkEVM
+	[scrollTestnet.id]: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Scroll Sepolia
+	[unichain.id]: '0xB1bf75ED16075C2a1684079632FB7DeBFdcB85B0', // Unichain Sepolia
+	[zircuitTestnet.id]: '0xbA760B4b7e91d2fC544F41608dBF79E1E27815C1', // Zircuit Testnet
 }
 
 export const usdcContractAbi = [

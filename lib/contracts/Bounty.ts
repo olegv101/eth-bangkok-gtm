@@ -1,18 +1,37 @@
 import { Address } from 'viem'
+import {
+	celoTestnet,
+	fhenixTestnet,
+	flow,
+	incoTestnet,
+	lineaTestnet,
+	mantleTestnet,
+	morphHoleskyTestnet,
+	neonTestnet,
+	oasisTestnet,
+	polygonZkEvm,
+	romeTestnet,
+	scrollTestnet,
+	unichain,
+	zircuitTestnet,
+} from '../constants'
+import { baseSepolia, scrollSepolia } from 'viem/chains'
 
 export const bountyAddress: Record<number, Address> = {
-	84532: '0x6830f2A16bB4926922696C1bCD710A0B7dC102e9', // Base Sepolia
-	974399131: '0xAc3934f8cc641c83FAeD3c1b6123B68518A04649', // Skale
-	1301: '0xC0eBF6f0dd14937Dd5606f4948D296593F7b1141', // Unichain
-	1101: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Polygon ZKEVM
-	1513: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Story Protocol
-	22040: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // AirDAO
-	100: '0xb18130AF620E1AcF51eEF5a191d08d6EfC47fFE0', // Gnosis Chain
-	545: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Flow Testnet
-	296: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Hedera
-	48899: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Zircuit
-	2810: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Morph
-	80002: '0xb18130AF620E1AcF51eEF5a191d08d6EfC47fFE0', // Polygon zkEVM
+	[baseSepolia.id]: '0x6830f2A16bB4926922696C1bCD710A0B7dC102e9', // Base Sepolia
+	[celoTestnet.id]: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Celo Testnet
+	[fhenixTestnet.id]: '0xC0eBF6f0dd14937Dd5606f4948D296593F7b1141', // Fhenix Testnet
+	[flow.id]: '0xbA760B4b7e91d2fC544F41608dBF79E1E27815C1', // Flow Testnet
+	[incoTestnet.id]: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Inco Testnet
+	[lineaTestnet.id]: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Linea Testnet
+	[mantleTestnet.id]: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Mantle Testnet
+	[morphHoleskyTestnet.id]: '0x569eBd53e4a129D89db141649c3ACFC3BA499ACc', // Morph Holesky Testnet
+	[neonTestnet.id]: '0x30eeC1609b82CEaC3bd75EC9Aab30a47A142bfc6', // Neon Testnet
+	[oasisTestnet.id]: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Oasis Testnet
+	[polygonZkEvm.id]: '0x569eBd53e4a129D89db141649c3ACFC3BA499ACc', // Polygon zkEVM
+	[scrollTestnet.id]: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Scroll Sepolia
+	[unichain.id]: '0xbA760B4b7e91d2fC544F41608dBF79E1E27815C1', // Unichain Sepolia
+	[zircuitTestnet.id]: '0xAc3934f8cc641c83FAeD3c1b6123B68518A04649', // Zircuit Testnet
 }
 export const bountyABI = [
 	{ type: 'constructor', inputs: [], stateMutability: 'nonpayable' },
