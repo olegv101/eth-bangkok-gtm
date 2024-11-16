@@ -28,11 +28,11 @@ const Index = () => {
 						address: primaryWallet.address as Address,
 					})
 					toast.success(
-						`Welcome to TEETwitter ${creator_ens || (primaryWallet.address as Address)}!`,
+						`Welcome to SocialBounty ${creator_ens || (primaryWallet.address as Address)}!`,
 					)
 				} catch (error) {
 					toast.success(
-						`Welcome to TEETwitter ${primaryWallet.address as Address}!`,
+						`Welcome to SocialBounty ${primaryWallet.address as Address}!`,
 					)
 				}
 				const bountyIds = await client.readContract({
@@ -104,9 +104,11 @@ const Index = () => {
 			<Section>
 				<div className='container mx-auto px-4 py-8'>
 					<h1 className='text-3xl font-bold mb-4'>Available Bounties</h1>
-					{bounties.map((bounty) => (
-						<BountyCard key={bounty.tweetId} bounty={bounty} />
-					))}
+					<div className='space-y-2'>
+						{bounties.map((bounty) => (
+							<BountyCard key={bounty.tweetId} bounty={bounty} />
+						))}
+					</div>
 				</div>
 			</Section>
 		</Page>

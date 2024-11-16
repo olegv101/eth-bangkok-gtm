@@ -13,7 +13,7 @@ module.exports = {
 				sm: 'calc(var(--radius) - 4px)',
 			},
 			colors: {
-				'custom-primary': '#70C145',
+				'custom-primary': '#2760C9',
 				'custom-accent': '#A9E689',
 			},
 			fontFamily: {
