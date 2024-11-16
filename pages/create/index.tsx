@@ -121,47 +121,94 @@ export default function Create() {
 	return (
 		<Page>
 			<Section>
-				<div className='container mx-auto px-8 py-12'>
-					<h2 className='text-3xl font-bold text-custom-primary mb-8'>
-						Create Bounty
-					</h2>
-					<div className='space-y-6 max-w-md mx-auto'>
-						<Input
-							placeholder='Token Address'
-							type='text'
-							value={tokenAddress ?? ''}
-							onChange={(e) => setTokenAddress(e.target.value as Address)}
-							className='w-full'
-						/>
-						<Input
-							placeholder='Amount'
-							type='number'
-							value={tokenAmount ?? ''}
-							onChange={(e) => setTokenAmount(Number(e.target.value))}
-							className='w-full'
-						/>
-						<Input
-							placeholder='Minimum View Count'
-							type='text'
-							value={minViewCount ?? ''}
-							onChange={(e) => setMinViewCount(e.target.value)}
-							className='w-full'
-						/>
-						<Input
-							placeholder='Keyword'
-							type='text'
-							value={keyword ?? ''}
-							onChange={(e) => setKeyword(e.target.value)}
-							className='w-full'
-						/>
-						<div className='mt-8'>
-							<CreateBountyButton
-								tokenAddress={tokenAddress}
-								tokenAmount={tokenAmount}
-								minViewCount={minViewCount}
-								keyword={keyword}
-								onCreated={() => setCreated(true)}
-							/>
+				<div className='container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-2xl'>
+					<div className='bg-white shadow-sm rounded-lg p-8'>
+						<h2 className='text-3xl font-bold text-custom-primary mb-8'>
+							Create Bounty
+						</h2>
+						<div className='space-y-6'>
+							<div className='space-y-2'>
+								<label
+									htmlFor='tokenAddress'
+									className='block text-sm font-medium text-gray-700'
+								>
+									Token Address
+								</label>
+								<Input
+									id='tokenAddress'
+									placeholder='Enter token address (0x...)'
+									type='text'
+									value={tokenAddress ?? ''}
+									onChange={(e) => setTokenAddress(e.target.value as Address)}
+									className='w-full'
+								/>
+								{tokenName && (
+									<p className='text-sm text-gray-500 mt-1'>
+										Token: {tokenName}
+									</p>
+								)}
+							</div>
+
+							<div className='space-y-2'>
+								<label
+									htmlFor='amount'
+									className='block text-sm font-medium text-gray-700'
+								>
+									Amount
+								</label>
+								<Input
+									id='amount'
+									placeholder='Enter token amount'
+									type='number'
+									value={tokenAmount ?? ''}
+									onChange={(e) => setTokenAmount(Number(e.target.value))}
+									className='w-full'
+								/>
+							</div>
+
+							<div className='space-y-2'>
+								<label
+									htmlFor='minViewCount'
+									className='block text-sm font-medium text-gray-700'
+								>
+									Minimum View Count
+								</label>
+								<Input
+									id='minViewCount'
+									placeholder='Enter minimum view count'
+									type='text'
+									value={minViewCount ?? ''}
+									onChange={(e) => setMinViewCount(e.target.value)}
+									className='w-full'
+								/>
+							</div>
+
+							<div className='space-y-2'>
+								<label
+									htmlFor='keyword'
+									className='block text-sm font-medium text-gray-700'
+								>
+									Keyword
+								</label>
+								<Input
+									id='keyword'
+									placeholder='Enter keyword'
+									type='text'
+									value={keyword ?? ''}
+									onChange={(e) => setKeyword(e.target.value)}
+									className='w-full'
+								/>
+							</div>
+
+							<div className='pt-6'>
+								<CreateBountyButton
+									tokenAddress={tokenAddress}
+									tokenAmount={tokenAmount}
+									minViewCount={minViewCount}
+									keyword={keyword}
+									onCreated={() => setCreated(true)}
+								/>
+							</div>
 						</div>
 					</div>
 				</div>

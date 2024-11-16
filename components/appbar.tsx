@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const links = [
-	{ label: 'Create Link', href: '/create' },
-	{ label: 'Redeem Link', href: '/redeem' },
+	{ label: 'Create Bounty', href: '/create' },
+	{ label: 'Redeemed Bounties', href: '/redeemed' },
 ]
 
 const Appbar = () => {
