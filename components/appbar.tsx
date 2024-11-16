@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 const links = [
 	{ label: 'Create Bounty', href: '/create' },
-	{ label: 'Redeemed Bounties', href: '/redeemed' },
+	{ label: 'Filled Bounties', href: '/filled' },
 ]
 
 const Appbar = () => {
@@ -20,10 +20,10 @@ const Appbar = () => {
 					>
 						<img
 							src='/images/favicon.png'
-							alt='SmolSend Logo'
+							alt='TEETwitter Logo'
 							className='w-6 h-6 mr-2'
 						/>
-						<h1 className='font-medium text-lg'>SmolSend</h1>
+						<h1 className='font-medium text-lg'>TEETwitter</h1>
 					</Link>
 					<nav className='flex items-center space-x-6'>
 						<div className='hidden sm:block'>

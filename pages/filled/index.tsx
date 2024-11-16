@@ -12,7 +12,7 @@ import {
 } from '@dynamic-labs/sdk-react-core'
 import { useEffect, useState } from 'react'
 import { toast } from 'sonner'
-import { Address, encodeAbiParameters, keccak256, zeroAddress } from 'viem'
+import { Address, zeroAddress } from 'viem'
 
 const Index = () => {
 	const isLoggedIn = useIsLoggedIn()
@@ -28,11 +28,11 @@ const Index = () => {
 						address: primaryWallet.address as Address,
 					})
 					toast.success(
-						`Welcome to SmolSend ${creator_ens || (primaryWallet.address as Address)}!`,
+						`Welcome to TEETwitter ${creator_ens || (primaryWallet.address as Address)}!`,
 					)
 				} catch (error) {
 					toast.success(
-						`Welcome to SmolSend ${primaryWallet.address as Address}!`,
+						`Welcome to TEETwitter ${primaryWallet.address as Address}!`,
 					)
 				}
 				const bountyIds = await client.readContract({
@@ -48,7 +48,7 @@ const Index = () => {
 							bountyId: index,
 						})),
 				)
-				console.log(bounties)
+				console.log('Filled bounties:', bounties)
 			}
 		}
 		fetchPasswords()
@@ -104,7 +104,7 @@ const Index = () => {
 		<Page>
 			<Section>
 				<div className='container mx-auto px-4 py-8'>
-					<h1 className='text-3xl font-bold mb-4'>Available Bounties</h1>
+					<h1 className='text-3xl font-bold mb-4'>Filled Bounties</h1>
 					{bounties.map((bounty) => (
 						<BountyCard key={bounty.tweetId} bounty={bounty} />
 					))}

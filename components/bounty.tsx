@@ -44,7 +44,9 @@ export default function BountyCard({ bounty }: { bounty: Bounty }) {
 			<div className='grid grid-cols-2 gap-4 mb-4'>
 				<div className='bg-gray-50 p-3 rounded-lg'>
 					<p className='text-sm text-gray-600'>Reward Amount</p>
-					<p className='text-lg font-semibold'>{bounty.bountyAmount} USDC</p>
+					<p className='text-lg font-semibold'>
+						{Number(bounty.bountyAmount)} USDC
+					</p>
 				</div>
 				<div className='bg-gray-50 p-3 rounded-lg'>
 					<p className='text-sm text-gray-600'>Required Views</p>

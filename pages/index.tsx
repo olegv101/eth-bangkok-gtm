@@ -28,11 +28,11 @@ const Index = () => {
 						address: primaryWallet.address as Address,
 					})
 					toast.success(
-						`Welcome to SmolSend ${creator_ens || (primaryWallet.address as Address)}!`,
+						`Welcome to TEETwitter ${creator_ens || (primaryWallet.address as Address)}!`,
 					)
 				} catch (error) {
 					toast.success(
-						`Welcome to SmolSend ${primaryWallet.address as Address}!`,
+						`Welcome to TEETwitter ${primaryWallet.address as Address}!`,
 					)
 				}
 				const bountyIds = await client.readContract({
@@ -48,7 +48,6 @@ const Index = () => {
 							bountyId: index,
 						})),
 				)
-				console.log(bounties)
 			}
 		}
 		fetchPasswords()

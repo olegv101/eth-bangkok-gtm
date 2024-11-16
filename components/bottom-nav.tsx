@@ -45,8 +45,8 @@ const links = [
 		icon: <PenIcon />,
 	},
 	{
-		label: 'Redeem',
-		href: '/redeem',
+		label: 'Filled',
+		href: '/filled',
 		icon: <GiftIcon />,
 	},
 ]
