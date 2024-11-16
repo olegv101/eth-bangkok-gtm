@@ -1,5 +1,6 @@
 import { Address } from 'viem'
 import {
+	bitKubTestnet,
 	celoTestnet,
 	fhenixTestnet,
 	flow,
@@ -32,6 +33,7 @@ export const bountyAddress: Record<number, Address> = {
 	[scrollTestnet.id]: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // Scroll Sepolia
 	[unichain.id]: '0xbA760B4b7e91d2fC544F41608dBF79E1E27815C1', // Unichain Sepolia
 	[zircuitTestnet.id]: '0xAc3934f8cc641c83FAeD3c1b6123B68518A04649', // Zircuit Testnet
+	[bitKubTestnet.id]: '0x20e11C584E5F30BB48cBF452B20aCB9E2D4A843C', // BitKub Testnet
 }
 export const bountyABI = [
 	{ type: 'constructor', inputs: [], stateMutability: 'nonpayable' },

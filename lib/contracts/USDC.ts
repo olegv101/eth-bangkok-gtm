@@ -1,6 +1,7 @@
 import { Address } from 'viem'
 import { baseSepolia } from 'viem/chains'
 import {
+	bitKubTestnet,
 	celoTestnet,
 	fhenixTestnet,
 	flow,
@@ -31,6 +32,7 @@ export const usdcContractAddress: Record<number, Address> = {
 	[scrollTestnet.id]: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // Scroll Sepolia
 	[unichain.id]: '0xB1bf75ED16075C2a1684079632FB7DeBFdcB85B0', // Unichain Sepolia
 	[zircuitTestnet.id]: '0xbA760B4b7e91d2fC544F41608dBF79E1E27815C1', // Zircuit Testnet
+	[bitKubTestnet.id]: '0x4581ea49EF41e55FcE60cc43D5752F5955bf6AD1', // BitKub Testnet
 }
 
 export const usdcContractAbi = [
