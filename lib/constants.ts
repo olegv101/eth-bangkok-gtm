@@ -384,23 +384,23 @@ export const zircuitTestnet = defineChain({
 })
 
 export const supportedNetworks = [
-	// bitKubTestnet,
+	bitKubTestnet,
 	baseSepolia,
 	celoTestnet,
-	// chilizTestnet,
+	chilizTestnet, // not deployed
 	fhenixTestnet,
 	flow,
-	// hederaTestnet,
+	hederaTestnet, // not deployed
 	incoTestnet,
-	// kintoTestnet,
+	kintoTestnet, // not deployed
 	lineaTestnet,
 	mantleTestnet,
 	morphHoleskyTestnet,
 	neonTestnet,
 	oasisTestnet,
 	polygonZkEvm,
-	// romeTestnet,
-	// rootstockTestnet,
+	romeTestnet, // not deployed
+	rootstockTestnet, // not deployed
 	scrollTestnet,
 	unichain,
 	zircuitTestnet,
